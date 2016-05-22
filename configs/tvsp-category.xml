@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapping>
+	<!-- Das mapping ist folgendermassen zu lesen:
+		<category name="Serie">
+			<contains>serie</contains>
+			<contains>soap</contains>
+		</category>
+		Wenn der Kategorietext aus dem tvsp-Daten serie oder soap enthält, dann ordner das der Kategorie Serie zu, also schreibe <category>Serie</category>
+		
+		Die Wörte innerhalb von contains müssen kleingeschrieben werden.
+		Die Reihenfolge der catgory-tags ist wichtig! Krimiserie wird daher zu serie eingeordnet, da Serie vor Spielfilm kommt
+	-->
+
+	<categories>
+		<category name="Serie">
+			<contains>reihe</contains>
+			<contains>serie</contains>
+			<contains>telenovela</contains>
+			<contains>soap</contains>
+			<contains>zeichentrick</contains>
+			<contains>arzt-hospital</contains>
+			<contains>clips</contains>
+			<contains>sitcom</contains>
+		</category>
+		<category name="Sport">
+			<contains>poker</contains>
+			<contains>tennis</contains>
+			<contains>formel 1</contains>
+			<contains>eishockey</contains>
+			<contains>golf</contains>
+			<contains>wrestling</contains>
+			<contains>segeln</contains>
+			<contains>nascar</contains>
+			<contains>snowboard</contains>
+			<contains>curling</contains>
+			<contains>motorrad</contains>
+			<contains>darts</contains>
+			<contains>bowling</contains>
+			<contains>eisschnelllauf</contains>
+			<contains>billard</contains>
+			<contains>cricket</contains>
+			<contains>biathlon</contains>
+			<contains>ball</contains>
+			<contains>boxen</contains>
+			<contains>ski</contains>
+			<contains>sport</contains>
+		</category>
+		<category name="Show">
+			<contains>lotterie</contains>
+			<contains>preisverleihung</contains>
+			<contains>volksfest</contains>
+			<contains>zirkus</contains>
+			<contains>gala</contains>
+			<contains>quiz</contains>
+			<contains>show</contains>
+			<contains>unterhal</contains>
+		</category>
+		<category name="Kinder">
+			<contains>kinder</contains>
+			<contains>märchen</contains>
+		</category>
+		<category name="Kultur &amp; Musik">
+			<contains>impressionen</contains>
+			<contains>literatur</contains>
+			<contains>festival</contains>
+			<contains>musical</contains>
+			<contains>theater</contains>
+			<contains>sketch</contains>
+			<contains>lustspiel</contains>
+			<contains>schwank</contains>
+			<contains>konzert</contains>
+			<contains>oper</contains>
+			<contains>comedy</contains>
+			<contains>kabarett</contains>
+			<contains>kunst</contains>
+			<contains>musik</contains>
+			<contains>satire</contains>
+		</category>
+		<category name="Information">
+			<contains>dokumenta</contains>
+		</category>
+		<category name="Spielfilm">
+			<contains>action</contains>
+			<contains>drama</contains>
+			<contains>film</contains>
+			<contains>fiction</contains>
+			<contains>horror</contains>
+			<contains>krimi</contains>
+			<contains>komödie</contains>
+			<contains>thriller</contains>
+			<contains>movie</contains>
+		</category>
+		<category name="Information">
+			<contains>interview</contains>
+			<contains>sitzung</contains>
+			<contains>ansprache</contains>
+			<contains>gottesdienst</contains>
+			<contains>bürgersendung</contains>
+			<contains>informationen</contains>
+			<contains>umwelt</contains>
+			<contains>geschichte</contains>
+			<contains>tiere</contains>
+			<contains>technik</contains>
+			<contains>verkehr</contains>
+			<contains>recht</contains>
+			<contains>porträt</contains>
+			<contains>gespräch</contains>
+			<contains>vortrag</contains>
+			<contains>bericht</contains>
+			<contains>bildung</contains>
+			<contains>boulevard</contains>
+			<contains>diskussion</contains>
+			<contains>doku</contains>
+			<contains>forschung</contains>
+			<contains>magazin</contains>
+			<contains>nachrichten</contains>
+			<contains>natur</contains>
+			<contains>polit</contains>
+			<contains>ratgeber</contains>
+			<contains>reise</contains>
+			<contains>report</contains>
+			<contains>reportage</contains>
+			<contains>soziales</contains>
+			<contains>wetter</contains>
+			<contains>wissen</contains>
+			<contains>wirtschaft</contains>
+			<contains>information</contains>
+			<contains>pr.-info</contains>
+			<contains>mode</contains>
+			<contains>sprachkurs</contains>
+			<contains>rückblick</contains>
+		</category>
+	</categories>
+
+</mapping>
+
