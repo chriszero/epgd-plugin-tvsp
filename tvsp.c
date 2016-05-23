@@ -195,14 +195,14 @@ int Tvsp::processDay(int day, int fullupdate, Statistic *stat) {
             if (saveXml) {
                 SaveFile(xmlData, filename.str() + ".xml");
             }
+            
+            std::stringstream fileRef;
+            fileRef << extid << "-" << date << "-" << eTag;
 
-            if (processXml(xmlData, extid, filename.str()) != success) {
+            if (processXml(xmlData, extid, fileRef.str()) != success) {
                 stat->rejected++;
             }
             else {
-                std::stringstream fileRef;
-                fileRef << extid << "-" << date << "-" << eTag;
-
                 obj->fileDb->clear();
                 obj->fileDb->setValue("Name", filename.str().c_str());
                 obj->fileDb->setValue("Source", getSource());
@@ -229,6 +229,7 @@ int Tvsp::processDay(int day, int fullupdate, Statistic *stat) {
         }
     }
 
+    obj->connection->commit();
     downloadImages();
 
     return success;
