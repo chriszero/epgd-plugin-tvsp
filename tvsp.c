@@ -14,6 +14,24 @@ Tvsp::Tvsp() {
     imageSize = 1;
     saveJson = false;
     saveXml = false;
+
+    stmtByFileRef = NULL;
+    selectByTag = NULL;
+    selectDistBySource = NULL;
+    selectId = NULL;
+    stmtMarkOldEvents = NULL;
+
+}
+
+Tvsp::~Tvsp() {
+    delete stmtByFileRef;
+    delete selectByTag;
+    delete selectDistBySource;
+    delete selectId;
+    delete stmtMarkOldEvents;
+
+    if (pxsltStylesheet)
+        xsltFreeStylesheet(pxsltStylesheet);
 }
 
 int Tvsp::init(cEpgd *aObject, int aUtf8) {

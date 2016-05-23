@@ -33,7 +33,6 @@ private:
 
     cDbStatement* stmtByFileRef;
     cDbStatement* selectByTag;
-    cDbValue* valueFileRef;
 
     std::set<std::string> imagefileSet;
 
@@ -63,6 +62,8 @@ private:
 
 public:
     Tvsp();
+
+    ~Tvsp();
 
     virtual int init(cEpgd* aObject, int aUtf8);
 
