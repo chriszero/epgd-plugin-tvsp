@@ -23,6 +23,8 @@
 #include "../../lib/common.h"
 #include "../../lib/curl.h"
 
+#define TVSP_VERSION  "0.0.2"
+
 class Tvsp : public Plugin {
 private:
     static xsltStylesheetPtr pxsltStylesheet;
@@ -61,6 +63,7 @@ private:
     const char* userAgent() { return "User-Agent: 4.2 (Nexus 10; Android 6.0.1; de_DE)"; }
 
 public:
+
     Tvsp();
 
     ~Tvsp();
