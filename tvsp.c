@@ -144,7 +144,22 @@ int Tvsp::ready() {
 }
 
 int Tvsp::exitDb() {
-    return Plugin::exitDb();
+    delete stmtByFileRef;
+    stmtByFileRef = NULL;
+
+    delete selectByTag;
+    selectByTag = NULL;
+
+    delete selectDistBySource;
+    selectDistBySource = NULL;
+
+    delete selectId;
+    selectId = NULL;
+
+    delete stmtMarkOldEvents;
+    stmtMarkOldEvents = NULL;
+
+    return success;
 }
 
 int Tvsp::atConfigItem(const char *Name, const char *Value) {
