@@ -263,7 +263,9 @@ int Tvsp::processDay(int day, int fullupdate, Statistic *stat) {
     }
 
     obj->connection->commit();
-    downloadImages();
+
+    if (!obj->doShutDown())
+       downloadImages();
 
     return success;
 }
@@ -450,7 +452,7 @@ void Tvsp::downloadImages() {
 
     tell(0, "Downloading images...");
     int n = 0;
-    for (std::set<std::string>::iterator it = imagefileSet.begin(); it != imagefileSet.end(); ++it) {
+    for (std::set<std::string>::iterator it = imagefileSet.begin(); it != imagefileSet.end() && !obj->doShutDown(); ++it) {
         // check if file is not on disk
         std::size_t found = it->find_last_of("/");
         if (found == std::string::npos) continue;

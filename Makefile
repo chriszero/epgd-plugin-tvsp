@@ -22,7 +22,7 @@ $(SOFILE): $(OBJS)
 	$(CC) $(CFLAGS) -shared $(OBJS) $(LIBS) -o $@
 
 install:  $(SOFILE) install-config
-	install -D $(SOFILE) $(PLGDEST)/
+	install -D $(SOFILE) $(_PLGDEST)/
 
 clean:
 	@-rm -f $(OBJS) core* *~ *.so

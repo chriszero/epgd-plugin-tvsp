@@ -19,11 +19,10 @@
 #include <libxml/parser.h>
 #include <libxml/tree.h>
 
-#include "../../epgd.h"
-#include "../../lib/common.h"
-#include "../../lib/curl.h"
+#include "epgd.h"
+#include "lib/curl.h"
 
-#define TVSP_VERSION  "0.0.2"
+#define TVSP_VERSION  "0.0.3"
 
 class Tvsp : public Plugin {
 private:
