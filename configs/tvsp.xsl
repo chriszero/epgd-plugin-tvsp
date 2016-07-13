@@ -19,10 +19,7 @@
 
 	<event>
 
-<!-- bis eventid im Backend erweitert
 	<xsl:attribute name="id"><xsl:value-of select="id"/></xsl:attribute>
--->
-	<xsl:attribute name="id"><xsl:value-of select="number(substring(id,4))"/></xsl:attribute>
 
 	<starttime><xsl:value-of select="timestart"/></starttime>
 	<duration><xsl:value-of select="substring-after(lengthNetAndGross,'/') * 60"/></duration>
