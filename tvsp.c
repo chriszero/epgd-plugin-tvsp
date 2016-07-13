@@ -582,12 +582,12 @@ int Tvsp::jsonToXml(const std::string &jsonDoc, std::string &xmlDoc) {
     root = json_loads(jsonDoc.c_str(), 0, &error);
 
     if (!root) {
-        tell(1, "error: on line %d: %s\n", error.line, error.text);
+        tell(1, "error: on line %d: %s", error.line, error.text);
         return fail;
     }
 
     if (!json_is_array(root)) {
-        tell(1, "error: root is not an object\n");
+        tell(1, "error: root is not an object");
         return fail;
     }
 
