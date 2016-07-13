@@ -304,7 +304,7 @@ int Tvsp::processXml(const std::string &xmlDoc, const std::string &extid, const 
         for (xmlNodePtr node = xmlRoot->xmlChildrenNode; node && obj->dbConnected(); node = node->next) {
             int insert;
             char *prop = 0;
-            int id;
+            tEventId eventid;
 
             // skip all unexpected elements
 
@@ -313,7 +313,7 @@ int Tvsp::processXml(const std::string &xmlDoc, const std::string &extid, const 
 
             // get/check id
 
-            if (!(prop = (char *) xmlGetProp(node, (xmlChar *) "id")) || !*prop || !(id = atoi(prop))) {
+            if (!(prop = (char *) xmlGetProp(node, (xmlChar *) "id")) || !*prop || !(eventid = atoll(prop))) {
                 xmlFree(prop);
                 tell(0, "Missing event id, ignoring!");
                 continue;
@@ -324,7 +324,7 @@ int Tvsp::processXml(const std::string &xmlDoc, const std::string &extid, const 
             // create event ..
 
             obj->eventsDb->clear();
-            obj->eventsDb->setValue("EventId", id);
+            obj->eventsDb->setBigintValue("EventId", eventid);
             obj->eventsDb->setValue("ChannelId", channelId);
 
             insert = !obj->eventsDb->find();
