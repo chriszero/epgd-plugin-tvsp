@@ -19,9 +19,6 @@
 
 	<event>
 
-<!-- bis eventid im Backend erweitert
-	<xsl:attribute name="id"><xsl:value-of select="id"/></xsl:attribute>
--->
 	<xsl:attribute name="id"><xsl:value-of select="id"/></xsl:attribute>
 
 	<starttime><xsl:value-of select="timestart"/></starttime>
