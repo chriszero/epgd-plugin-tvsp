@@ -520,7 +520,8 @@ void Tvsp::createXmlNode(json_t *jdata, const char *jkey, xmlNodePtr parent) {
 
             std::ostringstream actors;
             size_t arraySize = json_array_size(value);
-            json_array_foreach(value, index, arrValue) {
+
+            for (index = 0; index < json_array_size(value) && (arrValue = json_array_get(value, index)); index++){
                 // if images or actors -> create new parent
                 std::string mykey(key);
                 if (mykey.find("images") != std::string::npos) {
