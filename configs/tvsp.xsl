@@ -23,7 +23,8 @@
 
 	<starttime><xsl:value-of select="timestart"/></starttime>
 	<duration><xsl:value-of select="substring-after(lengthNetAndGross,'/') * 60"/></duration>
-	<title><xsl:value-of select="title"/></title>
+	<!-- Ersetzen der Zeichen – ’ durch - und gerades ', damit Serien im gleichen Ordner landen -->
+	<title><xsl:value-of select='translate(title, "–’", "-&apos;")'/></title>
 
         <xsl:choose>
             <xsl:when test="string-length(episodeTitle)>0">
