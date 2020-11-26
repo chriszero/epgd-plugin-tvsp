@@ -91,7 +91,10 @@
 	<xsl:if test="string-length(fsk)"><parentalrating><xsl:value-of select="fsk"/></parentalrating></xsl:if>
 	<xsl:if test="string-length(director)"><director><xsl:value-of select="director"/></director></xsl:if>
 	<xsl:if test="string-length(anchorman)"><moderator><xsl:value-of select="anchorman"/></moderator></xsl:if>
-	<xsl:if test="string-length(actors)"><actor><xsl:value-of select="actors"/></actor></xsl:if>
+	<xsl:if test="string-length(actors)">
+	  <!-- Ersetzen von \n durch ' ' und entfernen von leeren Klammern. Und zum Schluß noch evt. doppelte Leerzeichen -->
+	  <actor><xsl:value-of select="str:replace(str:replace(str:replace(actors,' ()',''),'\n',' '),'  ',' ')"/></actor>
+	</xsl:if>
 	<xsl:if test="string-length(studio_guests)"><guest><xsl:value-of select="studio_guests"/></guest></xsl:if>
 	<xsl:if test="string-length(authorComment)"><commentator><xsl:value-of select="authorComment"/></commentator></xsl:if>
 
