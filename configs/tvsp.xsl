@@ -23,7 +23,8 @@
 
 	<starttime><xsl:value-of select="timestart"/></starttime>
 	<duration><xsl:value-of select="substring-after(lengthNetAndGross,'/') * 60"/></duration>
-	<title><xsl:value-of select="title"/></title>
+	<!-- Ersetzen der Zeichen – ’ durch - und gerades ', damit Serien im gleichen Ordner landen -->
+	<title><xsl:value-of select='translate(title, "–’", "-&apos;")'/></title>
 
         <xsl:choose>
             <xsl:when test="string-length(episodeTitle)>0">
@@ -90,7 +91,10 @@
 	<xsl:if test="string-length(fsk)"><parentalrating><xsl:value-of select="fsk"/></parentalrating></xsl:if>
 	<xsl:if test="string-length(director)"><director><xsl:value-of select="director"/></director></xsl:if>
 	<xsl:if test="string-length(anchorman)"><moderator><xsl:value-of select="anchorman"/></moderator></xsl:if>
-	<xsl:if test="string-length(actors)"><actor><xsl:value-of select="actors"/></actor></xsl:if>
+	<xsl:if test="string-length(actors)">
+	  <!-- Ersetzen von Sonderzeichen (Zeilenumbruch, Tab, …) durch Leerzeichen und entfernen von leeren Klammern () -->
+	  <actor><xsl:value-of select="normalize-space(str:replace(actors, ' ()', ''))"/></actor>
+	</xsl:if>
 	<xsl:if test="string-length(studio_guests)"><guest><xsl:value-of select="studio_guests"/></guest></xsl:if>
 	<xsl:if test="string-length(authorComment)"><commentator><xsl:value-of select="authorComment"/></commentator></xsl:if>
 
