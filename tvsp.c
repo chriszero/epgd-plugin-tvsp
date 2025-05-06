@@ -483,7 +483,7 @@ int Tvsp::getPicture(const char *imagename, const char *fileRef, MemoryStruct *d
 
 int Tvsp::downloadJson(const std::string chanId, const std::string day, std::string &etag, std::string &jsonDoc) {
     std::string etagHeader = "If-None-Match: " + etag;
-    std::string uri = "http://live.tvspielfilm.de/static/broadcast/list/" + chanId + "/" + day;
+    std::string uri = "http://tvs3.cellular.de/broadcast/list/" + chanId + "/" + day;
     MemoryStruct memoryStruct;
     curl_slist *headerList = NULL;
     headerList = curl_slist_append(headerList, "Accept: application/json");
